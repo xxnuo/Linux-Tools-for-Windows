@@ -9,7 +9,7 @@
 - 打开命令行执行
     
     ```batch
-    winget install busybox-w32
+    winget install frippery.busybox-w32
     busybox --install
     winget install Git.MinGit
     ```
