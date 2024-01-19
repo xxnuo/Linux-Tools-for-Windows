@@ -9,9 +9,12 @@
 - 打开命令行执行
     
     ```batch
+    @rem Gnu Make is better than busybox's make
+    winget install GnuWin32.Make
+    mklink "%USERPROFILE%\AppData\Local\Microsoft\WinGet\Links\make.exe" "C:\Program Files (x86)\GnuWin32\bin\make.exe"
+    winget install Git.MinGit
     winget install frippery.busybox-w32
     busybox --install
-    winget install Git.MinGit
     ```
     
 - 重启终端等工具使新环境变量生效
@@ -70,11 +73,7 @@ To use Linux tools on Windows, follow these steps:
 
 - Open the command prompt and execute the following commands:
 
-    ```batch
-    winget install frippery.busybox-w32
-    busybox --install
-    winget install Git.MinGit
-    ```
+    see above
 
 - Restart the terminal or any other tools to activate the new environment variables.
 
