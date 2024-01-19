@@ -43,9 +43,18 @@
 
 Linux 工具使用 [busybox-w32](https://frippery.org/busybox/) 的 64位 Unicode 版本代替
 
-Git 使用官方的 `mingit-busybox` 代替
+Git 使用官方的 `mingit` 代替
 
-> 为什么不直接使用 `mingit-busybox` 内置的 `busybox`?
-> 因为经过测试，`mingit-busybox` 自带的 busybox 不是最新版的，并且不是 64 位 Unicode 版本。会在一些命令上遇到中文乱码的问题。
+> 为什么不使用 `mingit-busybox` 然后用它内置的 `busybox`?
+> 
+> 首先，没有使用 `mingit-busybox` 是因为 `winget` 目前还未收录  `mingit-busybox` 这个版本的 git
+> 
+> 使用 `winget` 安装软件简单方便，会自动配置环境变量，新系统可非常方便的重现。
+>
+> 其次 `mingit-busybox` 和  `mingit` 两个版本安装后的占用区别并不大
+> 
+> 最后经过测试，`mingit-busybox` 自带的 busybox 不是最新版的 64 位 Unicode 版本。会在一些命令上遇到中文乱码的问题。
+>
+> 当然不喜欢简单方便的命令，喜欢自己动手的可以手动下载 `mingit-busybox` 并自己配置也不失为一个好的方法。
 
 完成！
