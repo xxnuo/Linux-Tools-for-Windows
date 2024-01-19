@@ -25,22 +25,27 @@
 我也尝试过使用诸如 `WSL1`、`WSL2`、`Git for Windows（MSYS2）` 等工具，
 
 实践中 `WSL2` 会遇到一些奇怪的 Bug 且性能不佳。
+
 主要是因为 hyperV 并不好用，`WSL2` 的网络配置有 Bug，此外开启 hyperV 还会导致宿主机性能下降(CPU: 8Gen I7)且不能正常使用模拟器。
+
 我的评价是虚拟机用 Linux 想要体验好还是 ssh 到实机或者用 VMware 开虚拟机了。
+
 
 转为使用原生的可执行文件实现
 
 使用 `WSL1` 尚可，但是提升体验需要如 `wslgit` 这样的工具转换目录和传递参数等。
 
 最佳的方案是使用完整 `Git for Windows` 或 `MSYS2` 并将其内置的 Linux 工具添加到环境变量中。
+
 可以用但是带的东西太多，不需要，并且也会有目录转换问题
 
-所以强迫症患者对其进行优化
+所以强迫症患者对其进行优化：
 
 Linux 工具使用 [busybox-w32](https://frippery.org/busybox/) 的 64位 Unicode 版本代替
+
 Git 使用官方的 `mingit-busybox` 代替
 
 > 为什么不直接使用 `mingit-busybox` 内置的 `busybox`?
 > 因为经过测试，`mingit-busybox` 自带的 busybox 不是最新版的，并且不是 64 位 Unicode 版本。会在一些命令上遇到中文乱码的问题。
 
-
+完成！
