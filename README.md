@@ -58,3 +58,56 @@ Git 使用官方的 `mingit` 代替
 > 当然不喜欢简单方便的命令，喜欢自己动手的可以手动下载 `mingit-busybox` 并自己配置也不失为一个好的方法。
 
 完成！
+
+
+# Linux Tools for Windows
+
+This repository provides a best practice for using Linux tools on the Windows operating system.
+
+# Usage
+
+To use Linux tools on Windows, follow these steps:
+
+- Open the command prompt and execute the following commands:
+
+    ```batch
+    winget install frippery.busybox-w32
+    busybox --install
+    winget install Git.MinGit
+    ```
+
+- Restart the terminal or any other tools to activate the new environment variables.
+
+By following these steps, you will be able to access and use various Linux tools directly on the Windows system.
+
+# Explanation
+
+Please note that this solution is specifically designed for perfectionist users who require Linux tools but prefer to work within the Windows environment. It includes commonly used Linux tools and Git.
+
+I have also tried tools like `WSL1`, `WSL2`, and `Git for Windows (MSYS2)`. In practice, `WSL2` encounters strange bugs and has poor performance. This is mainly due to the issues with hyperV and the network configuration bug in `WSL2`. Additionally, enabling hyperV reduces the host machine's performance (CPU: 8th Gen I7) and prevents the use of emulators.
+
+In my opinion, if you want a good Linux experience, it's better to use a virtual machine or SSH into a physical machine or use VMware to create a virtual machine.
+
+The alternative solution is to use native executable files. `WSL1` is still acceptable, but for an improved experience, tools like `wslgit` are needed for directory conversion and passing parameters.
+
+The best approach is to use the full version of `Git for Windows` or `MSYS2` and add their built-in Linux tools to the environment variables.
+
+While they can be used, they come with unnecessary components and can have directory conversion issues. So, for perfectionist users, optimization is necessary:
+
+- Use the 64-bit Unicode version of [busybox-w32](https://frippery.org/busybox/) as a replacement for Linux tools.
+- Use the official `mingit` as a replacement for Git.
+
+> Why not use `mingit-busybox` with its built-in `busybox`?
+> 
+> First, `mingit-busybox` is not yet included in `winget`, so it's not available for installation through that method.
+> 
+> Using `winget` for software installation is simple and convenient, and it automatically configures the environment variables, making it easy to reproduce on new systems.
+> 
+> Second, the difference in disk space usage between `mingit-busybox` and `mingit` is not significant.
+> 
+> Lastly, after testing, it was found that the built-in busybox in `mingit-busybox` is not the latest version of the 64-bit Unicode version. This can cause issues with Chinese characters in some commands.
+> 
+> Of course, if you prefer more hands-on approaches and don't mind the convenience of commands, you can manually download `mingit-busybox` and configure it yourself, which is also a good option.
+
+Done!
+
